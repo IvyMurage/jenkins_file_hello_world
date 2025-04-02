@@ -9,9 +9,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Get some code from a GitHub repository
-                git branch: 'ch/jenkins-file-add', credentialsId: 'abb59ec2-0233-41d1-8ab5-8bf86232c6dc', url: 'https://github.com/IvyMurage/jenkins_file_hello_world'
-
                 // Run Maven on a Unix agent.
                 sh 'mvn clean package -DskipTests=true'
             }
