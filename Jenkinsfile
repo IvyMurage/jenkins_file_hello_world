@@ -14,19 +14,7 @@ pipeline {
 
                 // Run Maven on a Unix agent.
                 sh 'mvn clean package -DskipTests=true'
-
-            // To run Maven on a Windows agent, use
-            // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
-
-        // post {
-        //     // If Maven was able to run the tests, even if some of the test
-        //     // failed, record the test results and archive the jar file.
-        //     success {
-        //         junit '**/target/surefire-reports/TEST-*.xml'
-        //         archiveArtifacts 'target/*.jar'
-        //     }
-        // }
         }
 
         stage('Test') {
@@ -43,9 +31,12 @@ pipeline {
 
         stage('Deploy') {
             steps {
+                script {
+                    for (int i = 0; i < 10; i++) {
+                        echo "Deploying $i"
+                    }
+                }
                 sh 'echo Deploying....'
-                sleep 3
-                echo 'This app has being deployed helooo'
             }
         }
     }
