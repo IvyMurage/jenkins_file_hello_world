@@ -28,11 +28,6 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                script {
-                    for (int i = 0; i < 10; i++) {
-                        echo "Deploying $i"
-                    }
-                }
                 sh 'echo Deploying....'
             }
         }
