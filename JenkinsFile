@@ -45,6 +45,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 sh 'java -jar target/hello-demo-*.jar '
+                echo "This app has being deployed"
             }
             
         }
