@@ -31,7 +31,13 @@ pipeline {
                 sh 'echo Hello World'
             }
         }
-        
+
+        stage('Echo Hello World 2') {
+            steps {
+                sh 'echo Hello World 2'
+            }
+        }
+
         stage('Deploy') {
             steps {
                 sh 'echo Deploying....'
