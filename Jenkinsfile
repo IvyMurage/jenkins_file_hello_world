@@ -26,6 +26,12 @@ pipeline {
             }
         }
 
+        stage('Echo Hello World') {
+            steps {
+                sh 'echo Hello World'
+            }
+        }
+        
         stage('Deploy') {
             steps {
                 sh 'echo Deploying....'
